@@ -14,6 +14,11 @@ const LoginForm = (props: LoginProps) => {
 		formState: { errors },
 	} = useForm();
 
+	const loginOpt = {
+		username: { required: 'Please fill in your username' },
+		passsword: { required: 'Please fill input your password' },
+	};
+
 	// # Form Business Function -----------------------
 	const hideLoginForm = () => props.setShowLogin(false);
 	console.log(props.showLogin, '2');
