@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 
 const LoginPage = () => {
+	const [showLogin, setShowLogin] = useState(true);
+	console.log(showLogin, '1');
 	return (
 		<>
 			<div className=" flex flex-col justify-center items-center w-screen min-h-screen">
@@ -9,7 +13,11 @@ const LoginPage = () => {
 					<h1 className="font-bold text-4xl text-center">
 						Welcome To The Summit
 					</h1>
-					<LoginForm />
+					{showLogin ? (
+						<LoginForm setShowLogin={setShowLogin} showLogin={showLogin} />
+					) : (
+						<RegisterForm setShowLogin={setShowLogin} />
+					)}
 				</div>
 			</div>
 		</>
