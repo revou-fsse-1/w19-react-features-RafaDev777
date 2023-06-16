@@ -1,7 +1,17 @@
 const DashboardPage = () => {
 	return (
 		<>
-			<div>Dashboard Page</div>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>NAME</th>
+						<th>STATUS</th>
+						<th>ACTION</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
 		</>
 	);
 };
