@@ -4,7 +4,7 @@ import RegisterForm from './RegisterForm';
 
 const LoginPage = () => {
 	const [showLogin, setShowLogin] = useState(true);
-	console.log(showLogin, '1');
+
 	return (
 		<>
 			<div className=" flex flex-col justify-center items-center w-screen min-h-screen">
