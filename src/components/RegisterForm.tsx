@@ -1,9 +1,6 @@
-type RegisterFormProps = {
-	setShowLogin: React.Dispatch<React.SetStateAction<boolean>>;
-};
+import { Link } from 'react-router-dom';
 
-const RegisterForm = (props: RegisterFormProps) => {
-	const showLoginForm = () => props.setShowLogin(true);
+const RegisterForm = () => {
 	return (
 		<form className="flex-col items-center flex text-center">
 			<input
@@ -25,9 +22,9 @@ const RegisterForm = (props: RegisterFormProps) => {
 			<button className="primary-button mt-10">Register</button>
 			<p className="mt-5 text-xs italic text-slate-500">
 				Already have an account?{' '}
-				<a href="#" className="text-sky-600" onClick={showLoginForm}>
+				<Link to="/login" className="text-sky-600">
 					Login
-				</a>
+				</Link>
 			</p>
 		</form>
 	);
