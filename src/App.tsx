@@ -6,6 +6,7 @@ import DashboardLayout from './layouts/DashboardLayout';
 import Test from './pages/Test';
 import Test2 from './pages/Test2';
 import DashboardPage from './pages/DashboardPage';
+import ErrorPage from './pages/ErrorPage';
 
 function App() {
 	return (
@@ -21,10 +22,7 @@ function App() {
 					<Route path="1" element={<Test />} />
 					<Route path="2" element={<Test2 />} />
 				</Route>
-				<Route
-					path="*"
-					element={<div className="text-3xl font-bold">error Choy</div>}
-				/>
+				<Route path="*" element={<ErrorPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

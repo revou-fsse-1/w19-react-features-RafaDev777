@@ -8,7 +8,7 @@
 	}
 
 	.primary-button {
-		@apply p-[0.25rem_2rem] rounded-md bg-white/40 trans-slow hover:bg-white/60;
+		@apply p-[0.25rem_2rem] w-fit h-fit rounded-md bg-white/30 trans-slow hover:bg-white/80;
 	}
 }
 
