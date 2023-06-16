@@ -10,6 +10,10 @@
 	.primary-button {
 		@apply p-[0.25rem_2rem] w-fit h-fit rounded-md bg-white/30 trans-slow hover:bg-white/80;
 	}
+
+	.input-error-message {
+		@apply mt-[0.25rem] text-sm text-red-600;
+	}
 }
 
 @layer utilities {

@@ -8,10 +8,21 @@ interface IFormData {
 	email: string;
 	password: string;
 }
+
 const schema = yup.object({
-	name: yup.string().required(),
-	email: yup.string().email().required(),
-	password: yup.string().required(),
+	name: yup.string().required('Please fill in your full name'),
+	email: yup
+		.string()
+		.email('Please enter a valid email address')
+		.required('Please fill in your emal address'),
+	password: yup
+		.string()
+		.min(5, 'Your password must have minimum 5 digit')
+		.matches(
+			/^(?=.*[0-9])(?=.*[a-zA-Z])/,
+			'Your password must containt at least 1 number and 1 letter'
+		)
+		.required('Please fill in your password'),
 });
 
 const RegisterForm = () => {
@@ -20,10 +31,10 @@ const RegisterForm = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({ resolver: yupResolver(schema) });
+	} = useForm({ resolver: yupResolver(schema), mode: 'onTouched' });
 
 	// # Services?
-	const handleRegister = () => {
+	const handleRegister = (Input: IFormData) => {
 		return null;
 	};
 
@@ -39,25 +50,32 @@ const RegisterForm = () => {
 				placeholder="Enter your username"
 			></input>
 			{errors?.name && (
-				<span className="mt-[0.25rem] text-sm text-red-600">
-					{errors.name.message}
-				</span>
+				<span className="input-error-message">{errors.name.message}</span>
 			)}
 
 			<input
 				id="email"
+				{...register('email')}
 				className="input-style mt-4"
 				placeholder="Please enter your email"
 			></input>
+			{errors?.email && (
+				<span className="input-error-message">{errors.email.message}</span>
+			)}
 			<input
 				id="password"
+				{...register('password')}
 				type="password"
 				className="input-style mt-4"
 				placeholder="Enter your password"
 			></input>
+			{errors?.password && (
+				<span className="input-error-message">{errors.password.message}</span>
+			)}
 			<button type="submit" className="primary-button mt-10">
 				Register
 			</button>
+
 			<p className="mt-5 text-xs italic text-slate-500">
 				Already have an account?{' '}
 				<Link to="/login" className="text-sky-600">
