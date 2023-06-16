@@ -1,7 +1,8 @@
 import { Controller, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from 'axios';
 
 interface IFormData {
 	name: string;
@@ -26,6 +27,7 @@ const schema = yup.object({
 });
 
 const RegisterForm = () => {
+	const navigate = useNavigate();
 	// # Validation Function --------------------------
 	const {
 		register,
@@ -34,8 +36,18 @@ const RegisterForm = () => {
 	} = useForm({ resolver: yupResolver(schema), mode: 'onTouched' });
 
 	// # Services?
-	const handleRegister = (Input: IFormData) => {
-		return null;
+	const handleRegister = async (input: IFormData) => {
+		try {
+			await axios.post('https://mock-api.arikmpt.com/api/user/register', {
+				name: input.name,
+				email: input.email,
+				password: input.password,
+			});
+
+			navigate('/login');
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (
