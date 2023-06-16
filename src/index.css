@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+	.input-style {
+		@apply p-[4px_10px] w-4/5 border-b-[1px] border-white/80 bg-white/0 text-center trans-slow focus:rounded-t-sm focus:bg-white/30 focus:outline-none focus:placeholder:text-white/0 placeholder:italic placeholder:text-sm placeholder:text-slate-600;
+	}
+
+	.primary-button {
+		@apply p-[0.25rem_2rem] rounded-md bg-white/40 trans-slow hover:bg-white/60;
+	}
+}
+
+@layer utilities {
+	.trans-slow {
+		@apply transition ease-in-out duration-700;
+	}
+}
