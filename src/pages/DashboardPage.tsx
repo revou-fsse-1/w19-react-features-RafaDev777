@@ -88,7 +88,7 @@ const DashboardPage = () => {
 		<>
 			<div className="containers ">
 				<button
-					// onClick={openModal}
+					onClick={openModal}
 					className="primary-button mt-16 mb-5 flex flex-row items-center self-start"
 				>
 					<RxPlus />
