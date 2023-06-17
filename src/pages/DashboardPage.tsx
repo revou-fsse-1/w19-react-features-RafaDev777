@@ -98,7 +98,7 @@ const DashboardPage = () => {
 					<div>
 						<table className="text-left w-full overflow-hidden rounded-xl shadow-xl">
 							<thead className="bg-slate-500/60">
-								<tr className="">
+								<tr className="text-slate-200">
 									<th className="px-5 py-3">ID</th>
 									<th>NAME</th>
 									<th>STATUS</th>
