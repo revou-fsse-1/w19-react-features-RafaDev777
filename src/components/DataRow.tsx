@@ -38,7 +38,7 @@ const DataRow = ({
 			<tr className="">
 				<td className="px-5 py-6">{id}</td>
 				<td>{name}</td>
-				<td className="flex flex-row items-center">
+				<td className="flex flex-row items-center py-6">
 					<HiXCircle
 						className={
 							status ? 'text-sky-400 animate-ping mr-2' : 'text-slate-600 mr-2'
