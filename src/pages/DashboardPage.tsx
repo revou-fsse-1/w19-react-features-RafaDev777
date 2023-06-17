@@ -86,35 +86,39 @@ const DashboardPage = () => {
 
 	return (
 		<>
-			<div className="containers ">
-				<button
-					onClick={openModal}
-					className="primary-button mt-16 mb-5 flex flex-row items-center self-start"
-				>
-					<RxPlus />
-					<p> Add new Category</p>
-				</button>
-				<table className="text-left">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>NAME</th>
-							<th>STATUS</th>
-							<th>ACTION</th>
-						</tr>
-					</thead>
-					<tbody>
-						{categories.map((category) => (
-							<DataRow
-								key={category.id}
-								id={category.id}
-								name={category.name}
-								status={category.is_active}
-								deleteCategoryFromState={deleteCategoryFromState}
-							/>
-						))}
-					</tbody>
-				</table>
+			<div className="container flex">
+				<div className="w-full">
+					<button
+						onClick={openModal}
+						className="primary-button mt-16 mb-5 flex flex-row items-center self-start"
+					>
+						<RxPlus />
+						<p> Add new Category</p>
+					</button>
+					<div>
+						<table className="text-left w-full overflow-hidden rounded-xl">
+							<thead className="bg-slate-500/60">
+								<tr className="">
+									<th className="px-5 py-3">ID</th>
+									<th>NAME</th>
+									<th>STATUS</th>
+									<th className="pl-10">ACTION</th>
+								</tr>
+							</thead>
+							<tbody className="bg-slate-200/60">
+								{categories.map((category) => (
+									<DataRow
+										key={category.id}
+										id={category.id}
+										name={category.name}
+										status={category.is_active}
+										deleteCategoryFromState={deleteCategoryFromState}
+									/>
+								))}
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 			<Modal
 				isOpen={showModal}

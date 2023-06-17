@@ -18,11 +18,9 @@ const DashboardLayout = () => {
 					<button className="primary-button">Logout</button>
 				</div>
 			</div>
-			<div className="flex justify-center">
+			<div className="flex justify-center w-screen">
 				<div className="container flex flex-col items-center ">
-					<div className="">
-						<Outlet />
-					</div>
+					<Outlet />
 				</div>
 			</div>
 		</>

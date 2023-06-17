@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import EditCategoryModal from './EditCategoryModal';
+import { HiXCircle } from 'react-icons/hi';
 
 interface DataRowProps {
 	id: string;
@@ -34,15 +35,22 @@ const DataRow = ({
 	const closeModal = () => setShowModal(false);
 	return (
 		<>
-			<tr>
-				<td>{id}</td>
+			<tr className="">
+				<td className="px-5 py-6">{id}</td>
 				<td>{name}</td>
-				<td>{status ? 'active' : 'inactive'}</td>
-				<td>
+				<td className="flex flex-row items-center">
+					<HiXCircle
+						className={
+							status ? 'text-sky-400 animate-ping mr-2' : 'text-slate-600 mr-2'
+						}
+					/>
+					{status ? 'active' : 'inactive'}
+				</td>
+				<td className="pl-10">
 					<button onClick={openModal} className="primary-button">
 						Edit
 					</button>
-					<button onClick={deleteCategory} className="primary-button">
+					<button onClick={deleteCategory} className="primary-button ml-5">
 						Delete
 					</button>
 				</td>
