@@ -96,7 +96,7 @@ const DashboardPage = () => {
 						<p> Add new Category</p>
 					</button>
 					<div>
-						<table className="text-left w-full overflow-hidden rounded-xl">
+						<table className="text-left w-full overflow-hidden rounded-xl shadow-xl">
 							<thead className="bg-slate-500/60">
 								<tr className="">
 									<th className="px-5 py-3">ID</th>
